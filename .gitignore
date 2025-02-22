@@ -1,1 +1,5 @@
 .env
+venv
+.vscode
+.venv
+backend/ai_integrate/__pycache__/
