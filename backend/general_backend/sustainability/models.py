@@ -1,4 +1,23 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
+from django.conf import settings
+
+class User(AbstractUser):
+    ACCOUNT_TYPES = [
+        ("REFURB", "Refurbisher"),
+        ("RECYCLE", "Recycler"),
+    ]
+
+    dob = models.CharField(max_length=10)
+    seller_rating = models.IntegerField(null=True, blank=True)
+    accountType = models.CharField(max_length=20, choices=ACCOUNT_TYPES)
+
+    def get_listings(self):
+        return Device.objects.filter(listing_user=self)
+
+    def __str__(self):
+        return f"{self.username} ({self.accountType})"
+
 
 class Device(models.Model):
     DEVICE_TYPES = [
@@ -22,40 +41,16 @@ class Device(models.Model):
     size = models.CharField(max_length=40)
     condition = models.CharField(max_length=30, choices=CONDITION_TYPES)
     price = models.FloatField()
-    listing_user = models.ForeignKey('User', on_delete=models.CASCADE)  # user who uploaded listing
+    listing_user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)  # Updated to use AUTH_USER_MODEL
 
     def __str__(self):
         return f"{self.deviceType}, {self.manufacturer}, {self.model}: {self.year}, {self.condition}: {self.price}$"
 
 
-class User(models.Model):
-    ACCOUNT_TYPES = [
-        ("REFURB", "Refurbisher"),
-        ("RECYCLE", "Recycler"),
-    ]
-        
-    first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50)
-    email = models.EmailField(primary_key=True)
-    dob = models.CharField(max_length=10)
-    seller_rating = models.IntegerField()
-    accountType = models.CharField(max_length=20, choices=ACCOUNT_TYPES)
-
-    def get_listings(self):
-        listings = Device.objects.filter(listing_user=self)
-        return listings
-
-    def __str__(self):
-        if self.accountType == "REFURB":
-            return f"{self.first_name} {self.last_name}, DOB: {self.dob}, Email: {self.email}, Refurbisher - Seller rating: {self.seller_rating}"
-        else:
-            return f"{self.first_name} {self.last_name}, DOB: {self.dob}, Email: {self.email}, Recycler"
-
-
 class Purchase(models.Model):
-    device = models.ForeignKey('Device', on_delete=models.CASCADE)
-    lister = models.ForeignKey('User', related_name="sales", on_delete=models.CASCADE)  #refurbisher
-    buyer = models.ForeignKey('User', related_name="purchases", on_delete=models.CASCADE)  #
+    device = models.ForeignKey(Device, on_delete=models.CASCADE)
+    lister = models.ForeignKey(settings.AUTH_USER_MODEL, related_name="sales", on_delete=models.CASCADE)  # Updated
+    buyer = models.ForeignKey(settings.AUTH_USER_MODEL, related_name="purchases", on_delete=models.CASCADE)  # Updated
     purchaseDate = models.CharField(max_length=10)
 
     @property
