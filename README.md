@@ -50,7 +50,7 @@ python manage.py runserver
 Navigate to root directory
 cd backend/ai_integrate
 python chatbot.py
-```bash
+```
 
 
 ## Features
