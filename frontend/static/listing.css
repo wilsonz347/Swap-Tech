@@ -1,0 +1,446 @@
+/*css for random listing*/
+
+@import url('https://fonts.googleapis.com/css2?family=BIZ+UDPGothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+
+.container {
+    width: 833px;
+    height: 919px;
+    position: relative;
+    background: white;
+}
+
+.header {
+    width: 833px;
+    height: 105px;
+    position: absolute;
+    background: #50D262;
+}
+
+.viewing-text {
+    left: 34px;
+    top: 29px;
+    position: absolute;
+    color: black;
+    font-size: 40px;
+    font-family: "Zen Dots", serif;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.ref {
+    left: 143px;
+    top: 173px;
+    position: absolute;
+    color: black;
+    font-size: 36px;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.current-listings {
+    left: 110px;
+    top: 255px;
+    position: absolute;
+    color: black;
+    font-size: 24px;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.items-sold {
+    left: 110px;
+    top: 597px;
+    position: absolute;
+    color: black;
+    font-size: 24px;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.listing-image-one {
+    width: 141px;
+    height: 169px;
+    left: 121px;
+    top: 322px;
+    position: absolute;
+}
+
+.listing-box {
+    background: #D9D9D9;
+    position: absolute;
+}
+
+.listing-box-1, .listing-box-2, .listing-box-3, .listing-box-4, .listing-box-5, .listing-box-6 {
+    width: 155px;
+    height: 95px;
+}
+
+.listing-box-1 {
+    left: 121px;
+    top: 481px;
+}
+
+.listing-box-2 {
+    left: 116px;
+    top: 786px;
+}
+
+.listing-box-3 {
+    left: 588px;
+    top: 786px;
+}
+
+.listing-box-4 {
+    left: 346px;
+    top: 786px;
+    width: 164px;
+}
+
+.listing-box-5 {
+    left: 362px;
+    top: 481px;
+}
+
+.listing-box-6 {
+    left: 577px;
+    top: 481px;
+    width: 164px;
+}
+
+.listing-info {
+    position: absolute;
+    color: black;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.listing-info-1 {
+    left: 123px;
+    top: 802px;
+    font-size: 15px;
+    font-family: "BIZ UDPGothic", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.listing-info-2 {
+    left: 361px;
+    top: 802px;
+    font-size: 15px;
+    font-family: "BIZ UDPGothic", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.listing-info-3 {
+    left: 129px;
+    top: 497px;
+    font-size: 15px;
+    font-family: "BIZ UDPGothic", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.listing-info-4 {
+    left: 594px;
+    top: 804px;
+    font-size: 15px;
+    font-family: "BIZ UDPGothic", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.listing-info-5 {
+    left: 370px;
+    top: 497px;
+    font-size: 15px;
+    font-family: "BIZ UDPGothic", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.listing-info-6 {
+    left: 585px;
+    top: 497px;
+    font-size: 15px;
+    font-family: "BIZ UDPGothic", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.listing-image-two {
+    width: 133px;
+    height: 160px;
+    left: 365px;
+    top: 312px;
+    position: absolute;
+}
+
+.listing-image-three {
+    width: 185px;
+    height: 185px;
+    left: 566px;
+    top: 296px;
+    position: absolute;
+}
+
+.listing-image-four {
+    width: 154px;
+    height: 154px;
+    left: 110px;
+    top: 632px;
+    position: absolute;
+}
+
+.rotate-image {
+    width: 48px;
+    height: 42px;
+    position: absolute;
+    transform: rotate(-90deg);
+    transform-origin: top left;
+}
+
+.rotate-image-1 {
+    left: 764px;
+    top: 770px;
+}
+
+.rotate-image-2 {
+    left: 764px;
+    top: 553px;
+}
+
+.listing-image-five {
+    width: 155px;
+    height: 155px;
+    left: 355px;
+    top: 631px;
+    position: absolute;
+}
+
+.listing-image-six {
+    width: 104px;
+    height: 160px;
+    left: 607px;
+    top: 620px;
+    position: absolute;
+}
+
+/*css for 'your listing'*/
+
+.container {
+    width: 833px;
+    height: 919px;
+    position: relative;
+    background: white;
+    font-family: "Inter", serif;
+    font-style: normal;
+}
+
+.header {
+    width: 833px;
+    height: 105px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    background: #50D262;
+}
+
+.title {
+    left: 34px;
+    top: 29px;
+    position: absolute;
+    color: black;
+    font-size: 40px;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.section-title {
+    left: 143px;
+    top: 173px;
+    position: absolute;
+    color: black;
+    font-size: 36px;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.current-listings {
+    left: 110px;
+    top: 255px;
+    position: absolute;
+    color: black;
+    font-size: 24px;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.items-sold {
+    left: 110px;
+    top: 597px;
+    position: absolute;
+    color: black;
+    font-size: 24px;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.image-container {
+    padding-top: 33px;
+    padding-bottom: 55px;
+    padding-left: 40px;
+    padding-right: 73px;
+    left: 63px;
+    top: 312px;
+    position: absolute;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.image {
+    width: 146px;
+    height: 81px;
+}
+
+.listing-box {
+    width: 141px;
+    height: 95px;
+    left: 116px;
+    top: 786px;
+    position: absolute;
+    background: #D9D9D9;
+}
+
+.listing-info {
+    left: 122px;
+    top: 806px;
+    position: absolute;
+    color: black;
+    font-size: 13px;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.listing-box.second {
+    left: 346px;
+    top: 786px;
+    position: absolute;
+    background: #D9D9D9;
+}
+
+.listing-info.second {
+    left: 367px;
+    top: 805px;
+    position: absolute;
+    color: black;
+    font-size: 14px;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.listing-box.third {
+    width: 141px;
+    height: 95px;
+    left: 110px;
+    top: 481px;
+    position: absolute;
+    background: #D9D9D9;
+}
+
+.rotate-image {
+    width: 48px;
+    height: 42px;
+    left: 764px;
+    top: 856px;
+    position: absolute;
+    transform: rotate(-90deg);
+    transform-origin: top left;
+}
+
+.small-image {
+    width: 33px;
+    height: 34px;
+    left: 773px;
+    top: 24px;
+    position: absolute;
+}
+
+.profile-label {
+    left: 767px;
+    top: 63px;
+    position: absolute;
+    color: black;
+    font-size: 15px;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.profile-image {
+    width: 140px;
+    height: 119px;
+    left: 116px;
+    top: 646px;
+    position: absolute;
+}
+
+.large-image {
+    width: 171px;
+    height: 157px;
+    left: 346px;
+    top: 318px;
+    position: absolute;
+}
+
+.listing-box.fourth {
+    width: 141px;
+    height: 95px;
+    left: 364px;
+    top: 483px;
+    position: absolute;
+    background: #D9D9D9;
+}
+
+.listing-info.fourth {
+    width: 113px;
+    height: 72px;
+    left: 383px;
+    top: 493px;
+    position: absolute;
+    color: black;
+    font-size: 14px;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.large-image-second {
+    width: 192px;
+    height: 124px;
+    left: 339px;
+    top: 646px;
+    position: absolute;
+}
+
+.rotate-image-second {
+    width: 48px;
+    height: 42px;
+    left: 764px;
+    top: 558px;
+    position: absolute;
+    transform: rotate(-90deg);
+    transform-origin: top left;
+}
