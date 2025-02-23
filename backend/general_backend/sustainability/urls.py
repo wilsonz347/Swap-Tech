@@ -8,7 +8,7 @@ from django.conf.urls.static import static  # Static files serving
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns  # Static files serving
 
 urlpatterns = [
-    path("landing", views.index, name="index"),
+    path("landing", views.landing, name="landing"), #temp landing page
     path('login/', views.login_page, name='login'),    # Login page
     path('register/', views.register_page, name='register'),  # Registration page
     path('logout/', views.logout_page, name='logout'), # Logout page

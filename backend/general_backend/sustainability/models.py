@@ -8,16 +8,32 @@ class User(AbstractUser):
         ("RECYCLE", "Recycler"),
     ]
 
-    dob = models.CharField(max_length=10)
+    dob = models.CharField(max_length=10, default='1970-01-01')
     seller_rating = models.IntegerField(null=True, blank=True)
     accountType = models.CharField(max_length=20, choices=ACCOUNT_TYPES)
+    
+    groups = models.ManyToManyField(
+        'auth.Group',
+        related_name='sustainability_user_set',  # Updated related_name
+        blank=True,
+        help_text=('The groups this user belongs to. A user will get all permissions '
+                   'granted to each of their groups.'),
+        related_query_name='user',
+    )
+
+    user_permissions = models.ManyToManyField(
+        'auth.Permission',
+        related_name='sustainability_user_set',  # Updated related_name
+        blank=True,
+        help_text='Specific permissions for this user.',
+        related_query_name='user',
+    )
 
     def get_listings(self):
         return Device.objects.filter(listing_user=self)
 
     def __str__(self):
         return f"{self.username} ({self.accountType})"
-
 
 class Device(models.Model):
     DEVICE_TYPES = [
@@ -45,7 +61,6 @@ class Device(models.Model):
 
     def __str__(self):
         return f"{self.deviceType}, {self.manufacturer}, {self.model}: {self.year}, {self.condition}: {self.price}$"
-
 
 class Purchase(models.Model):
     device = models.ForeignKey(Device, on_delete=models.CASCADE)
