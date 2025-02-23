@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+.logo, .about h2, .mission h1 {
+    font-family: 'Black Ops One', cursive;
+    font-weight: 400; /* Only available in regular (400) */
+    font-style: normal;
+    font-size: 90px; /* Adjust as needed */
+    
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,7 +16,7 @@ body {
 }
 
 .top-part {
-    background: #fff;
+    background: #3C9748;
     padding: 20px 30px;
 }
 
@@ -20,7 +29,7 @@ body {
 .logo {
     font-size: 36px;
     font-weight: bold;
-    color: #50D262;
+    color: white;
 }
 
 nav ul {
@@ -36,18 +45,18 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     font-size: 24px;
-    color: #50D262;
+    color: white;
 }
 
 .hero {
-    background: #CAE6CD;
+    background: white;
     padding: 50px;
     border-radius: 70px;
 }
 
 .hero h1 {
     font-size: 64px;
-    color: #C8F0CE;
+    color: #3C9748;
     letter-spacing: 3px;
 }
 
@@ -65,13 +74,13 @@ nav ul li a {
     margin: 10px;
 }
 
-.about, .stats, .mission, .contact {
+.about, .mission, .contact {
     padding: 50px;
 }
 
-.about h2, .stats h2, .mission h2 {
+.about h2, .mission h2 {
     font-size: 90px;
-    color: #50D262;
+    color: #3C9748;
 }
 
 .tracks {
@@ -85,19 +94,7 @@ nav ul li a {
     font-size: 24px;
 }
 
-.stats {
-    background: rgba(66, 185, 79, 0.77);
-    padding: 50px;
-}
 
-.stat {
-    background: black;
-    color: white;
-    font-size: 40px;
-    padding: 20px;
-    margin: 20px auto;
-    width: 50%;
-}
 
 .mission {
     background: black;
