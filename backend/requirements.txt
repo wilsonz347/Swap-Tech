@@ -3,3 +3,4 @@ transformers
 Flask
 flask-cors
 Pillow
+django
