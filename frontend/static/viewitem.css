@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=BIZ+UDPGothic&family=Black+Ops+One&family=Zen+Dots&display=swap');
+
+.viewing-text {
+    font-family: "Zen Dots", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+}
+
+body {
+    font-family: "BIZ UDPGothic", sans-serif;
+    background: white;
+    margin: 0;
+    padding: 0;
+}
+
+.view-item-example {
+    width: 833px;
+    height: 543px;
+    position: relative;
+    background: white;
+}
+
+.header {
+    width: 833px;
+    height: 105px;
+    position: absolute;
+    background: #50D262;
+}
+
+.profile-text {
+    position: absolute;
+    left: 674px;
+    top: 66px;
+    color: black;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.icon-large {
+    width: 47.82px;
+    height: 29px;
+    position: absolute;
+    left: 763px;
+    top: 27px;
+}
+
+.icon-small {
+    width: 33px;
+    height: 34px;
+    position: absolute;
+    left: 680px;
+    top: 22px;
+}
+
+.viewing-text {
+    position: absolute;
+    left: 34px;
+    top: 29px;
+    color: black;
+    font-size: 40px;
+    font-weight: 400;
+}
+
+.item-image {
+    width: 270px;
+    height: 270px;
+    position: absolute;
+    left: 74px;
+    top: 132px;
+}
+
+.item-description {
+    position: absolute;
+    left: 141px;
+    top: 428px;
+    color: black;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.seller-name {
+    position: absolute;
+    left: 450px;
+    top: 157px;
+    color: black;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.full-description {
+    position: absolute;
+    left: 450px;
+    top: 210px;
+    color: black;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.add-to-cart-button {
+    width: 149px;
+    height: 46px;
+    position: absolute;
+    left: 450px;
+    top: 382px;
+    background: #50D262;
+    border-radius: 40px;
+}
+
+.add-to-cart-text {
+    position: absolute;
+    left: 479px;
+    top: 395px;
+    color: black;
+    font-size: 15px;
+    font-weight: 400;
+}

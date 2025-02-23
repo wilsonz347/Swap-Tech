@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=BIZ+UDPGothic&family=Black+Ops+One&family=Zen+Dots&display=swap');
+
+body, .UploadYourListing {
+    margin: 0;
+    font-family: 'Zen Dots', sans-serif;
+}
+
+.Photos, .Upload, .Description, .NavigationBar, .GoodbyeText {
+    font-family: "BIZ UDPGothic", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.GoodbyeTitle {
+    font-family: "Zen Dots", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+}
+
+/* General Styles */
+.Rectangle1 {
+    width: 100%;
+    height: 72px;
+    position: absolute;
+    background: #50D262;
+}
+
+/* Upload Listing Page */
+.Frame4 {
+    width: 833px;
+    height: 438px;
+    position: relative;
+}
+
+.UploadItem {
+    width: 833px;
+    height: 438px;
+    position: absolute;
+    background: white;
+}
+
+.UploadYourListing {
+    width: 350px;
+    height: 34px;
+    position: absolute;
+    left: 49px;
+    top: 19px;
+    color: black;
+    font-size: 30px;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.addphoto {
+    width: 106px;
+    height: 106px;
+    position: absolute;
+    left: 143px;
+    top: 115px;
+}
+
+.Rectangle19, .Rectangle20, .Rectangle21 {
+    width: 106px;
+    height: 106px;
+    position: absolute;
+    background: #D9D9D9;
+}
+
+.Rectangle19 { left: 263px; top: 115px; }
+.Rectangle20 { left: 386.5px; top: 115px; }
+.Rectangle21 { left: 510px; top: 115px; }
+
+.Photos {
+    position: absolute;
+    left: 148px;
+    top: 84px;
+    color: black;
+    font-size: 15px;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.Description {
+    position: absolute;
+    left: 124px;
+    top: 288px;
+    color: black;
+    font-size: 15px;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.Rectangle22 {
+    width: 572px;
+    height: 89px;
+    position: absolute;
+    left: 124px;
+    top: 310px;
+    background: white;
+    border: 1px solid black;
+}
+
+.UploadButton {
+    width: 57px;
+    height: 31px;
+    position: absolute;
+    left: 639px;
+    top: 401px;
+    background: #33A14B;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Upload {
+    color: white;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+/* Logout Page */
+.LogOut {
+    width: 766px;
+    height: 481px;
+    position: relative;
+    background: white;
+}
+
+.GoodbyeMessage {
+    width: 326px;
+    height: 101px;
+    position: absolute;
+    left: 358.83px;
+    top: 218px;
+}
+
+.GoodbyeTitle {
+    color: black;
+    font-size: 35px;
+    font-family: 'Instrument Sans', sans-serif;
+    font-weight: 400;
+    display: block;
+}
+
+.GoodbyeText {
+    color: black;
+    font-size: 12px;
+    font-family: 'Instrument Sans', sans-serif;
+    font-weight: 400;
+}
+
+.WavingHand {
+    width: 86px;
+    height: 86px;
+    position: absolute;
+    left: 678.83px;
+    top: 197px;
+}
+
+.SignInButton {
+    width: 106px;
+    height: 37px;
+    position: absolute;
+    left: 546.83px;
+    top: 330px;
+    background: #33A14B;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.SignBackIn {
+    color: white;
+    font-size: 12px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+.Image27 {
+    width: 339px;
+    height: 220px;
+    position: absolute;
+    left: 0;
+    top: 167px;
+}
+
+.NavigationBar {
+    width: 403px;
+    height: 24px;
+    position: absolute;
+    left: 345px;
+    top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.NavItem {
+    color: black;
+    font-size: 15px;
+    font-family: 'BIZ UDPGothic', sans-serif;
+    font-weight: 400;
+}
