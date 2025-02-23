@@ -5,17 +5,17 @@ Swap Tech is a platform that promotes eco-friendly tech consumption by facilitat
 
 ## Tech Stack
 ### Backend
-Django
-Flask 
-PyTorch
-Transformers
-Pillow
+- Django
+- Flask 
+- PyTorch
+- Transformers
+- Pillow
 
 ### Frontend
-Django Templates
-HTML
-CSS
-JavaScript
+- Django Templates
+- HTML
+- CSS
+- JavaScript
 
 ## Installation
 
