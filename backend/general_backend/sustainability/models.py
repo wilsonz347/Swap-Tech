@@ -11,6 +11,8 @@ class User(AbstractUser):
     dob = models.CharField(max_length=10, default='1970-01-01')
     seller_rating = models.IntegerField(null=True, blank=True)
     accountType = models.CharField(max_length=20, choices=ACCOUNT_TYPES)
+    profile_image = models.ImageField(upload_to='profiles/', null=True, blank=True)
+    notifications = models.IntegerField(default=0)
     
     groups = models.ManyToManyField(
         'auth.Group',
@@ -57,6 +59,8 @@ class Device(models.Model):
     size = models.CharField(max_length=40)
     condition = models.CharField(max_length=30, choices=CONDITION_TYPES)
     price = models.FloatField()
+    seller_ref = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='devices/')
     listing_user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)  # Updated to use AUTH_USER_MODEL
 
     def __str__(self):

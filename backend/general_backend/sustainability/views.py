@@ -84,4 +84,21 @@ def register_page(request):
     return render(request, 'register.html', {'form': form})
 
 
+@login_required
+def marketplace(request):
+    user_profile = User.objects.get(user=request.user)
+    devices = Device.objects.all()
+    filters = {
+        'sort_options': ['Price', 'Name', 'Date'],
+        'current_sort': request.GET.get('sort', 'Price')
+    }
+    context = {
+        'page_title': 'Marketplace',
+        'user_profile': user_profile,
+        'devices': devices,
+        'filters': filters
+    }
+    return render(request, 'marketplace.html', context)
+
+
 ######################################################################
