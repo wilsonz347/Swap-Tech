@@ -79,6 +79,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ### Development Process Challenges
 1. Balancing feature implementation within hackathon timeframe
 
-### Future Improvements
+## Future Improvements
 - Implement location/direct swap to find sustainable resources near the user's area.
 - Live-tracking user sustainability based on off their contributions
