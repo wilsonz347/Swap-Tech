@@ -2,12 +2,23 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.conf import settings
 
+class UserProfile(models.Model):
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    profile_image = models.ImageField(upload_to='profiles/', null=True, blank=True)
+    notifications = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.user.username
+
+
 class User(AbstractUser):
     ACCOUNT_TYPES = [
         ("REFURB", "Refurbisher"),
         ("RECYCLE", "Recycler"),
     ]
 
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
     dob = models.CharField(max_length=10, default='1970-01-01')
     seller_rating = models.IntegerField(null=True, blank=True)
     accountType = models.CharField(max_length=20, choices=ACCOUNT_TYPES)
