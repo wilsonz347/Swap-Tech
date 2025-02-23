@@ -13,9 +13,6 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from pathlib import Path
 import os
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -53,17 +50,20 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'general_backend.urls'
 
+BASE_DIR = Path(__file__).resolve().parent.parent.parent.parent  # Adjusted to point to the correct root
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, '..', '..', 'frontend', 'static')
+    BASE_DIR / 'frontend/static'
 ]
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, '..', '..', 'frontend', 'webpages')
+            BASE_DIR / 'frontend/webpages'
         ],
         'APP_DIRS': True,
         'OPTIONS': {

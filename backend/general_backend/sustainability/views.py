@@ -11,7 +11,7 @@ from .models import *
 
 #home landing page - to be adjusted later
 def landing(request):
-    return render(request, 'landing.html')
+    return render(request, 'realsite.html')
 
 
 # Authentication methods - login, logout, account registration...
