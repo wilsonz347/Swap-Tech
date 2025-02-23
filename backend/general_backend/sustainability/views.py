@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.models import User
 from .forms import *
 from .models import *
@@ -46,11 +47,30 @@ def login_page(request):
 
     return render(request, 'login.html', {'form': form})
 
+@login_required
 def recycler_home(request):
-    return render(request, 'recyclerhome.html')
+    user = request.user  # Get the logged-in user
+    profile = UserProfile.objects.filter(user=user).first()  # Fetch the user's profile if it exists
+    listings = Device.objects.filter(listing_user=user)  # Fetch the user's device listings
+
+    context = {
+        #'firstname': user.first_name,
+        #'lastname': user.last_name,
+        #'username': username,  #get user
+        'profile': profile,
+        'profile_image': profile.profile_image.url if profile and profile.profile_image else None,  #profile image URL
+        'notifications': profile.notifications if profile else 0,  #notification count
+        'listings': listings,  #listings
+    }
+    
+    return render(request, 'recyclerhome.html', context)
+
 
 def refurbisher_home(request):
-    return render(request, 'home.html')
+    return render(request, 'refurbhome.html')
+
+def chatbot(request):
+    return render(request, 'chatbot.html')
 
 
 def logout_page(request):
@@ -82,6 +102,27 @@ def register_page(request):
         form = UserRegistrationForm()
 
     return render(request, 'register.html', {'form': form})
+
+
+@login_required
+def marketplace(request):
+    try:
+        user_profile = UserProfile.objects.get(user=request.user)
+    except UserProfile.DoesNotExist:
+        user_profile = UserProfile.objects.create(user=request.user)
+    
+    devices = Device.objects.all()
+    filters = {
+        'sort_options': ['Price', 'Name', 'Date'],
+        'current_sort': request.GET.get('sort', 'Price')
+    }
+    context = {
+        'page_title': 'Marketplace',
+        'user_profile': user_profile,
+        'devices': devices,
+        'filters': filters
+    }
+    return render(request, 'purchase.html', context)
 
 
 ######################################################################

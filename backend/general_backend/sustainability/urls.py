@@ -14,7 +14,9 @@ urlpatterns = [
     path('register/', views.register_page, name='register'),  # Registration page
     path('logout/', views.logout_page, name='logout'), # Logout page
     path('recyclerhome/', views.recycler_home, name='recyclerhome'), #Recycler home
-    path('home/', views.refurbisher_home, name='home') #new, refurbisher home
+    path('home/', views.refurbisher_home, name='home'), #refurbisher home
+    path('marketplace/', views.marketplace, name='marketplace'), #purchase page,
+    path('chatbot/', views.chatbot, name='chatbot'), #new
 ]
 
 if settings.DEBUG:

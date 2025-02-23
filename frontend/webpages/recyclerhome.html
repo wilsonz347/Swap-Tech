@@ -1,18 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- frontend/webpages/recyclerhome.html -->
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home Buying Page</title>
-  <link rel="stylesheet" href="static/realsite.css" />
-</head>
+{% extends "base.html" %}
+
+{% block title %}Welcome!{% endblock %}
+
+{% block content %}
 
 <body>
   <div class="HomeBuyingPage">
     <div class="Rectangle1"></div>
-    <div class="HeyRyc1">Hey, Ryc. 1</div>
-    <div class="Profile">Profile</div>
+    <div class="HeyRyc1">Hey, </div>
+    <div class="Profile">{{profile}}</div>
     <img class="Image1" src="https://placehold.co/404x245" />
     <img class="Image2" src="https://placehold.co/48x29" />
     
@@ -54,4 +52,4 @@
   </div>
 </body>
 
-</html>
+{% endblock %}
