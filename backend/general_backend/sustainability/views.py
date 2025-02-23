@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from .forms import LoginForm
+from .forms import *
 from .models import *
 
 #sustainability/views.py - maintains all logic to handle backend-frontend interaction
@@ -37,11 +37,21 @@ def login_page(request):
                 return redirect('/login/')
             else:
                 login(request, user)
-                return redirect('/home/')
+                if user.accountType == "RECYCLE":
+                    return redirect('/recyclerhome/')
+                else:
+                    return redirect('/home/')
     else:
         form = LoginForm()
 
     return render(request, 'login.html', {'form': form})
+
+def recycler_home(request):
+    return render(request, 'recyclerhome.html')
+
+def refurbisher_home(request):
+    return render(request, 'home.html')
+
 
 def logout_page(request):
     if request.method == "POST":
@@ -51,37 +61,27 @@ def logout_page(request):
 
 def register_page(request):
     if request.method == 'POST':
-        first_name = request.POST.get('first_name')
-        last_name = request.POST.get('last_name')
-        username = request.POST.get('username')
-        email = request.POST.get('email')
-        password = request.POST.get('password')
-        account_type = request.POST.get('account_type')
-        
-        # Check if a user with the provided username already exists
-        user = User.objects.filter(username=username)
-        
-        if user.exists():
-            messages.info(request, "Username already taken!")
-            return redirect('/register/')
-        
-        # Create a new User object with the provided information
-        user = User.objects.create_user(
-            first_name=first_name,
-            last_name=last_name,
-            username=username,
-            email=email,
-            accountType=account_type
-        )
-        
-        # Set the user's password and save the user object
-        user.set_password(password)
-        user.save()
-        
-        messages.info(request, "Account created Successfully!")
-        return redirect('/login/')
-    
-    return render(request, 'register.html')
+        form = UserRegistrationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            raw_password = form.cleaned_data.get('password1')
+            account_type = form.cleaned_data.get('account_type')
+            
+            # Automatically log in the user after registration
+            user = authenticate(username=user.username, password=raw_password)
+            if user is not None:
+                login(request, user)
+                messages.info(request, "Account created and logged in successfully!")
+                if user.accountType == "RECYCLE":
+                    return redirect('recyclerhome')
+                else:
+                    return redirect('home')
+        else:
+            messages.error(request, "Error creating account. Please try again.")
+    else:
+        form = UserRegistrationForm()
+
+    return render(request, 'register.html', {'form': form})
 
 
 ######################################################################

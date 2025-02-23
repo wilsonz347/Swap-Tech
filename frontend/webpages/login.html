@@ -1,5 +1,4 @@
 <!-- frontend/webpages/login.html -->
-{% load static %}
 
 {% extends "base.html" %}
 
@@ -12,4 +11,6 @@
     {{ form.as_p }}
     <button type="submit">Login</button>
 </form>
+
+<h3>Don't have an account? <a href="{% url 'register' %}">Register here.</a></h3>
 {% endblock %}
