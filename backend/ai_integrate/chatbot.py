@@ -8,6 +8,8 @@ from sklearn.metrics.pairwise import cosine_similarity
 app = Flask(__name__)
 CORS(app)
 
+
+
 # Load the knowledge base from a JSON file
 KNOWLEDGE_BASE_FILE = "knowledge_base.json"
 KNOWLEDGE_BASE = {}
@@ -120,6 +122,16 @@ def extract_relevant_context(text, question):
 @app.route('/', methods=['GET'])
 def home():
     return jsonify("[CONNECTED]")
+
+@app.route('/chatbot', methods=['POST'])
+def chatbot():
+    data = request.json  # Get JSON data from the request
+    user_message = data.get("message", "")
+    
+    # Your chatbot logic here
+    bot_response = f"Chatbot response to: {user_message}"
+    
+    return jsonify({"response": bot_response})
 
 if __name__ == "__main__":
     app.run(debug=True)
